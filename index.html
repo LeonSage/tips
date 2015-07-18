@@ -1,0 +1,47 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>前端开发</title>
+	<meta  http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<style type="text/css">
+		body,div,iframe,ul,li{margin: 0px;padding: 0px;}
+		ul{list-style: none;}
+		li{float: left;}
+		header{width: 100%;height: 10%;position: fixed;background-color: black;color: white;}
+		header ul{margin-top: 1%;}
+		header li{padding: 5px;margin-left: 10px;border-radius: 5px;}
+		#content{width: 100%;height: 100%;}
+		#index{width: 10%;height: 90%;background-color: #CCC;position: absolute;top: 10%;}
+		#info{width: 90%;min-height: 90%;position: absolute;left: 10%;top: 10%;border: 0px;height: 90%;background-image: url();}
+	</style>
+</head>
+<body>
+	<header>
+		<ul id="nav">
+			<li onclick="parent.document.getElementById('info').src='./html.html'">HTML</li>
+			<li onclick="parent.document.getElementById('info').src='./js.html'">Javascript</li>
+		</ul>
+	</header>
+	<div id="content">
+		<div id="index"></div>
+		<iframe src="./html.html" id="info" name="info"></iframe>
+	</div>
+</body>
+<script type="text/javascript">
+	window.onload=function(){
+		var count;		
+		var oHeaderLi=document.getElementById('nav').getElementsByTagName('li');
+		for(count=0;count<oHeaderLi.length;count++){
+			oHeaderLi[count].onmouseover=function(){
+				for(count=0;count<oHeaderLi.length;count++){
+					oHeaderLi[count].style.backgroundColor="#000";
+				}
+				this.style.backgroundColor="red";
+			}
+			oHeaderLi[count].onmouseoclick=function(){
+				this.style.backgroundColor="red";
+			}
+		}
+	}
+</script>
+</html>
